@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>AI4Debunk</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <header>
+                <img src="../img/ai4debunk-logo.png" class="logo" alt="AI4Debunk Logo">
+                <div class="languageSelector">
+                    <div class="dropdown">
+                        <button class="dropbtn" id="languageButton">Language</button>
+                        <div class="dropdown-content">
+                            <a href="#" onclick="setLanguage('🇺🇸 EN')"><span role="img"aria-label="English">🇺🇸</span> EN</a>
+                            <a href="#" onclick="setLanguage('🇳🇱 NL')"><span role="img" aria-label="Dutch">🇳🇱</span> NL</a>
+                            <a href="#" onclick="setLanguage('🇫🇷 FR')"><span role="img" aria-label="French">🇫🇷</span> FR</a>
+                            <a href="#" onclick="setLanguage('🇩🇪 DE')"><span role="img"aria-label="German">🇩🇪</span> DE</a>
+                            <a href="#" onclick="setLanguage('🇪🇸 ES')"><span role="img"aria-label="Spanish">🇪🇸</span> ES</a>
+                            <a href="#" onclick="setLanguage('🇮🇹 IT')"><span role="img"aria-label="Italian">🇮🇹</span> IT</a>
+                            <a href="#" onclick="setLanguage('🇵🇹 PT')"><span role="img"aria-label="Portuguese">🇵🇹</span> PT</a>
+                            <a href="#" onclick="setLanguage('🇷🇺 RU')"><span role="img"aria-label="Russian">🇷🇺</span> RU</a>
+                            <a href="#" onclick="setLanguage('🇯🇵 JA')"><span role="img"aria-label="Japanese">🇯🇵</span> JA</a>
+                            <a href="#" onclick="setLanguage('🇨🇳 ZH')"><span role="img"aria-label="Chinese">🇨🇳</span> ZH</a>
+                            <a href="#" onclick="setLanguage('🇰🇷 KO')"><span role="img"aria-label="Korean">🇰🇷</span> KO</a>
+                            <a href="#" onclick="setLanguage('🇸🇦 AR')"><span role="img"aria-label="Arabic">🇸🇦</span> AR</a>
+                            <a href="#" onclick="setLanguage('🇮🇳 HI')"><span role="img" aria-label="Hindi">🇮🇳</span> HI</a>
+                            <a href="#" onclick="setLanguage('🇹🇷 TR')"><span role="img"aria-label="Turkish">🇹🇷</span> TR</a>
+                            <a href="#" onclick="setLanguage('🇸🇪 SV')"><span role="img"aria-label="Swedish">🇸🇪</span> SV</a>
+                            <a href="#" onclick="setLanguage('🇳🇴 NO')"><span role="img"aria-label="Norwegian">🇳🇴</span> NO</a>
+                            <a href="#" onclick="setLanguage('🇫🇮 FI')"><span role="img"aria-label="Finnish">🇫🇮</span> FI</a>
+                            <a href="#" onclick="setLanguage('🇩🇰 DA')"><span role="img"aria-label="Danish">🇩🇰</span> DA</a>
+                            <a href="#" onclick="setLanguage('🇬🇷 EL')"><span role="img" aria-label="Greek">🇬🇷</span> EL</a>
+                            <a href="#" onclick="setLanguage('🇵🇱 PL')"><span role="img"aria-label="Polish">🇵🇱</span> PL</a>
+                            <a href="#" onclick="setLanguage('🇨🇿 CS')"><span role="img" aria-label="Czech">🇨🇿</span> CS</a>
+                            <a href="#" onclick="setLanguage('🇭🇺 HU')"><span role="img"aria-label="Hungarian">🇭🇺</span> HU</a>
+                            <a href="#" onclick="setLanguage('🇷🇴 RO')"><span role="img"aria-label="Romanian">🇷🇴</span> RO</a>
+                            <a href="#" onclick="setLanguage('🇹🇭 TH')"><span role="img" aria-label="Thai">🇹🇭</span> TH</a>
+                            <a href="#" onclick="setLanguage('🇮🇩 ID')"><span role="img"aria-label="Indonesian">🇮🇩</span> ID</a>
+                            <a href="#" onclick="setLanguage('🇲🇾 MS')"><span role="img" aria-label="Malay">🇲🇾</span> MS</a>
+                            <a href="#" onclick="setLanguage('🇻🇳 VI')"><span role="img"aria-label="Vietnamese">🇻🇳</span> VI</a>
+                        </div>
+                    </div>
+                </div>
+                <img src="../img/profile.png" alt="Profile Icon" class="profile-icon">
+            </header>
+            <div class="content">
+                <div class="skill">
+                    <div class="outer">
+                        <div class="inner">
+                            <div class="score" id="number">0.00</div>
+                            <div class="label">betrouwbaarheidsindex</div>
+                        </div>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="200px" height="200px">
+                        <defs>
+                            <linearGradient id="GradientColor">
+                                <stop offset="0%" stop-color="#e91e63" />
+                                <stop offset="100%" stop-color="#673ab7" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="100" cy="100" r="90" stroke-linecap="round" />
+                    </svg>
+                </div>
+                <button class="scanBtn">SCAN NU</button>
+                <div id="spinner" class="spinner"></div> 
+            </div>
+            <div class="displayLike">
+                <p>Laat ons weten wat u ervan vond:</p>
+                <div class="container1">
+                    <button class="circle-button">
+                        <a href=""><img class="like" src="../img/like.png" alt="LIKE"></a>
+                    </button>
+                    <button class="circle-button">
+                        <a href=""><img class="dislike" src="../img/dislike.png" alt="DISLIKE"></a>
+                    </button>
+                </div>
+            </div>
+            <div id="output"></div>
+            <!-- <div id="pageText"></div> -->
+        </div>
+        <script src="popup.js"></script>
+    </body>

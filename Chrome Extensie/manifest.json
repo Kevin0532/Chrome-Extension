@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "AI Checker Kevin",
+    "version": "3.0",
+    "description": "Een extension die checkt of informatie waar is.",
+    "permissions": [
+        "activeTab",
+        "storage",
+        "scripting",
+        "tabs"
+    ],
+    "action": {
+        "default_popup": "popup/popup.html",
+        "default_icon": "img/icon.png"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}
